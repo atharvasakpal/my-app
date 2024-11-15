@@ -1,10 +1,12 @@
 import HeaderBox from '@/components/HeaderBox'
 import RightSidebar from '@/components/RightSidebar'
 import TotalBalanceBox from '@/components/TotalBalanceBox'
+import { getLoggedInUser } from '@/lib/actions/user.actions'
 import React from 'react'
 
-const Home = () => {
-    const loggedIn = {firstName:'Atharva', lastName:'Sakpal', email: 'atharvasakpal@protonmail.com'}
+const Home = async() => {
+    const loggedIn = await getLoggedInUser()
+    
   return (
     <section className='no-scrollbar flex flex-row w-full max-xl:max-h-screen max-xl:overflow-y-scroll'>
         <div className='no-scrollbar flex w-full flex-1 flex-col gap-8 px-5 sm:px-8 py-7 lg:py-12 xl:max-h-screen xl:overflow-scroll'>
@@ -12,7 +14,7 @@ const Home = () => {
                 <HeaderBox
                 type='greeting'
                 title='Welcome'
-                user={loggedIn?.firstName || 'Guest'}
+                user={loggedIn?.name || 'Guest'}
                 subtext='Access and manage your account and transactiions efficiently'
                 />
 
