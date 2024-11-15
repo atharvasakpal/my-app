@@ -70,3 +70,25 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+    .bg-gradient-mesh {
+      background-image: radial-gradient(at 20% 20%, #1e3a8a, transparent),
+                        radial-gradient(at 80% 30%, #1e40af, transparent),
+                        radial-gradient(at 50% 80%, #1d4ed8, transparent);
+    }
+  }
+
+.home {
+  @apply flex w-full flex-row max-xl:max-h-screen max-xl:overflow-y-scroll;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
