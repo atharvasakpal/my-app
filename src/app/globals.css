@@ -79,6 +79,10 @@ body {
     }
   }
 
+.flex-center {
+    @apply flex items-center justify-center;
+  }
+
 .home {
   @apply flex w-full flex-row max-xl:max-h-screen max-xl:overflow-y-scroll;
 }
